@@ -1,0 +1,83 @@
+$font-stack: Helvetica, sans-serif
+$header-color: #292f33
+$header-color-2: #55acee
+
+header
+	background-color: $header-color
+
+	.nav
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		//Menu elements
+		ul.header-left-menu, ul.header-right-menu
+			display: flex
+
+			li a.header-left-menu-no_dropdown
+				padding: 15px 0px
+				margin: 0px 10px
+				display: inline-block
+				color: #999999
+				text-decoration: none
+				border-bottom: solid 3px $header-color
+				font: 100% $font-stack
+				transition: 0.6s
+
+			li:first-child a.header-left-menu-no_dropdown
+				margin-left: 0
+
+			li a.header-left-menu-no_dropdown:hover, li a.selected
+				border-bottom: solid 3px $header-color-2
+
+			ul.header-left-menu-dropdown
+				opacity: 0
+				visibility: hidden
+				position: absolute
+				background-color: $header-color
+				margin-left: 10px
+				border-bottom: solid 3px $header-color-2
+				-webkit-transition: all 0.3s ease-in-out
+				-moz-transition: all 0.3s ease-in-out
+				transition: all 0.3s ease-in-out
+				border-bottom-right-radius: 10px
+
+				li:last-child a
+					border-bottom-right-radius: 5px
+
+				li a
+					padding: 12px 20px 12px 10px
+					display: block
+					color: #999999
+					text-decoration: none
+					font: 100% $font-stack
+					-webkit-transition: all 0.3s ease-in-out
+					-moz-transition: all 0.3s ease-in-out
+					transition: all 0.3s ease-in-out
+
+				li a:hover
+					background-color: $header-color-2
+					color: #e1e8ed
+
+		//Display drop down menu
+		ul.header-left-menu li:hover ul.header-left-menu-dropdown
+			opacity: 1
+			visibility: visible
+
+		//Header left part
+		div.header-left
+			display: flex
+			
+		//Header right part
+		div.header-right
+			display: flex
+			align-items: center
+
+			form input.header-right-search
+				background-image: url('../img/header-right-search_icon.png')
+				background-position: 5px 50%
+				background-repeat: no-repeat
+				padding: 5px 0px 5px 23px
+				border: 0
+				border-radius: 3px
+				margin-left: 5px
